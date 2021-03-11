@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TextSample.Views;
 using Xamarin.Forms;
 
 namespace TextSample
@@ -22,6 +23,7 @@ namespace TextSample
 			pages.Add (new OrderPageCode ());
 			pages.Add (new BuiltInStylesXaml ());
 			pages.Add (new CustomStylesXaml ());
+			pages.Add(new HeartfullEditionPage());
 
 			ListOfPages.ItemsSource = pages;
 		}

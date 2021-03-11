@@ -111,12 +111,12 @@
     <PackageReference Include="Microsoft.Bcl.Build" Version="1.0.21" />
     <PackageReference Include="PCLCrypto" Version="2.0.147" />
     <PackageReference Include="PCLStorage" Version="1.0.2" />
-    <PackageReference Include="PInvoke.BCrypt" Version="0.3.2" />
-    <PackageReference Include="PInvoke.Kernel32" Version="0.3.2" />
-    <PackageReference Include="PInvoke.NCrypt" Version="0.3.2" />
-    <PackageReference Include="PInvoke.Windows.Core" Version="0.3.2" />
-    <PackageReference Include="Validation" Version="2.2.8" />
-    <PackageReference Include="Xamarin.Auth" Version="1.5.0.3" />
+    <PackageReference Include="PInvoke.BCrypt" Version="0.7.78" />
+    <PackageReference Include="PInvoke.Kernel32" Version="0.7.78" />
+    <PackageReference Include="PInvoke.NCrypt" Version="0.7.78" />
+    <PackageReference Include="PInvoke.Windows.Core" Version="0.7.78" />
+    <PackageReference Include="Validation" Version="2.4.22" />
+    <PackageReference Include="Xamarin.Auth" Version="1.7.0" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.1874" />
     <PackageReference Include="Xamarin.Social" Version="1.1.8" />
   </ItemGroup>

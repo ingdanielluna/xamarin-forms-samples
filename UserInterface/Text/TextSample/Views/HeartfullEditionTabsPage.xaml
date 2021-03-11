@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TextSample.Views.HeartfullEditionTabsPage">
+
+    <ContentPage.Resources>
+
+        <!-- Global Colors -->
+        <Color x:Key="primaryPink">#F9A898</Color>
+        <Color x:Key="secondaryPink">#F6D0C9</Color>
+        <Color x:Key="textColor">#495057</Color>
+        <Color x:Key="lighterTextColor">#cac2ba</Color>
+        
+
+        <!-- Global Sizes -->
+        <x:Double x:Key="largeTextSize">24</x:Double>
+        <x:Double x:Key="mediumTextSize">20</x:Double>
+        <x:Double x:Key="smallTextSize">16</x:Double>
+        <x:Double x:Key="xsmallTextSize">12</x:Double>
+
+        <!-- Explicit Styles -->
+        <Style x:Key="labelHeading" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource primaryPink}" />
+            <Setter Property="FontSize" Value="{StaticResource mediumTextSize}" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout>
+
+                <!--Page Title-->
+                <Label Text="Select which tabs you would like to include on your Heartfull profile"
+                           Margin="20"
+                           HorizontalTextAlignment="Center"
+                           TextColor= "{StaticResource primaryPink}"
+                           FontSize="{StaticResource largeTextSize}"/>
+
+                <!--Practical - Errands-->
+                <StackLayout StyleId="Errands">
+
+                    <Label Text="1. Practical Help - Errands"
+                                       Margin="20, 20, 0, 0"
+                                       HorizontalTextAlignment="Start"
+                                       TextColor= "{StaticResource primaryPink}"
+                                       FontSize="{StaticResource mediumTextSize}"/>
+                    <Frame Padding="1" Margin="20,10,20,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                        <Frame Padding="1" BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                            <Label Padding="8"
+                                   Text="This tab enables you to list general tasks/errands that your loved one may need help with. Examples include picking up groceries, driving them to appointments, babysitting the kids, filling a pharmacy script, etc. Friends and family can assign themselves a particular task to make your life easier." 
+                                   TextColor="{StaticResource textColor}"
+                                   HorizontalTextAlignment="Center"
+                                   FontSize="{StaticResource smallTextSize}"/>
+                        </Frame>
+                    </Frame>
+                    <StackLayout Orientation="Horizontal" Margin="20, 0, 0 ,0" HorizontalOptions="Center">
+                        <Frame Padding="1" Margin="20,10,0,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                            <Frame Padding="1" BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                                <StackLayout Padding="10, 0, 10, 0" VerticalOptions="Center">
+                                    <CheckBox x:Name="Errands_CheckBox" StyleId="Errands_CheckBox" IsChecked="{Binding SelectedTabsBooleans.Errands}" Color="{StaticResource primaryPink}" CheckedChanged="OnCheckBoxChanged"/>
+                                </StackLayout>
+                            </Frame>
+                        </Frame>
+                        <Frame Padding="1" Margin="0,10,20,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                            <Frame Padding="1" BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                                <StackLayout Padding="8">
+                                    <Picker x:Name="Errands"
+                                            BackgroundColor="White"
+                                            Title="Privacy Option:" 
+                                            ItemsSource="{Binding PrivacyLevels}"
+                                            TextColor="{StaticResource textColor}" 
+                                            HorizontalOptions="FillAndExpand"
+                                            SelectedItem="{Binding SelectedTabsPrivacyStrings.Errands}"
+                                            SelectedIndexChanged="OnPrivacyPickerChanged"/>
+                                </StackLayout>
+                            </Frame>
+                        </Frame>
+                    </StackLayout>
+
+                </StackLayout>
+
+                <!--Tabs Password Box-->
+                <StackLayout StyleId="Errands">
+
+                    <Label Text="Please choose a password so your loved ones can view private pages:"
+                                       Margin="20, 20, 0, 0"
+                                       HorizontalTextAlignment="Start"
+                                       TextColor= "{StaticResource primaryPink}"
+                                       FontSize="{StaticResource mediumTextSize}"/>
+                    <Frame Padding="1" Margin="20,10,20,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                        <Frame Padding="10, 0,10,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                            <Entry Text="" 
+                                   IsPassword="True"
+                                   Placeholder="Type password here"
+                                   TextColor="{StaticResource textColor}"
+                                   HorizontalTextAlignment="Start"
+                                   FontSize="{StaticResource smallTextSize}"/>
+                        </Frame>
+                    </Frame>
+                    <Label Text="Tip: choose something simple and easy to remember (e.g. daffodil of thebeatles)"
+                           Margin="40, -3, 40, 0"
+                           HorizontalTextAlignment="Center"
+                           TextColor= "{StaticResource lighterTextColor}"
+                           FontSize="{StaticResource xsmallTextSize}"/>
+                </StackLayout>
+
+
+                <Button x:Name="createButton" Margin="20,30,20,30" Text="Create Profile" BackgroundColor="{StaticResource primaryPink}" TextColor="White" CornerRadius="10"/>
+
+            </StackLayout>
+        </ScrollView>
+        
+    </ContentPage.Content>
+    
+</ContentPage>

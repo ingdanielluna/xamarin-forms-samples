@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TextSample.Views.HeartfullEditionPage"
+             Title="Heartfull Page"
+             Visual="Material">
+
+    <ContentPage.Resources>
+        <!-- Global Colors -->
+        <Color x:Key="primaryPink">#F9A898</Color>
+        <Color x:Key="secondaryPink">#F6D0C9</Color>
+        <Color x:Key="textColor">#495057</Color>
+
+
+        <!-- Global Sizes -->
+        <x:Double x:Key="mediumTextSize">20</x:Double>
+        <x:Double x:Key="smallTextSize">16</x:Double>
+
+        <!-- Explicit Styles -->
+        <Style x:Key="labelHeading" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource primaryPink}" />
+            <Setter Property="FontSize" Value="{StaticResource mediumTextSize}" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout Padding="5,10">
+
+                <Frame Padding="1" Margin="20,10,20,30" BorderColor="{StaticResource secondaryPink}" BackgroundColor="{StaticResource primaryPink}" CornerRadius="10">
+                    <StackLayout Spacing="16" Padding="8">
+                        <Label 
+                            Text="Select a Profile Picture"
+                            TextColor="White"
+                            HorizontalTextAlignment="Center"
+                            Padding="13"
+                            FontSize="{StaticResource mediumTextSize}"/>
+                        <Button x:Name="addPictureButton" Margin="20,30,20,30" Text="Add picture" BackgroundColor="White" TextColor="{StaticResource textColor}" CornerRadius="10"/>
+                    </StackLayout>
+                </Frame>
+                
+                <!--Double framing used to make frame border thicker-->
+
+                <!--User Story-->
+                <!--<Frame Padding="1" Margin="20,10,20,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                    <Frame Padding="1"  BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                        <StackLayout Spacing="16" Padding="8">
+                            <Editor StyleId="userStory"  Placeholder="Your Story" AutoSize="TextChanges" TextColor="{StaticResource textColor}"/>
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+
+                --><!--First Name--><!--
+                <Frame Padding="1" Margin="20,10,20,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                    <Frame Padding="1" BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                        <StackLayout Spacing="16" Padding="8">
+                            <Entry StyleId="firstName" Placeholder="First Name" TextColor="{StaticResource textColor}"/>
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+
+                --><!--Last Name--><!--
+                <Frame Padding="1" Margin="20,10,20,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                    <Frame Padding="1" BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                        <StackLayout Spacing="16" Padding="8">
+                            <Entry StyleId="lastName" Placeholder="Last Name" TextColor="{StaticResource textColor}"/>
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+
+                --><!--Preferred Name--><!--
+                <Frame Padding="1" Margin="20,10,20,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                    <Frame Padding="1" BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                        <StackLayout Spacing="16" Padding="8">
+                            <Entry StyleId="preferredName" Placeholder="Preferred Name" TextColor="{StaticResource textColor}"/>
+                        </StackLayout>
+                    </Frame>
+                </Frame>-->
+
+                <!--Phone number--><!--
+                <Frame Padding="1" Margin="20,10,20,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                    <Frame Padding="1" BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                        <StackLayout Spacing="16" Padding="8">
+                            <Entry StyleId="phoneNumber" Placeholder="Phone Number" TextColor="{StaticResource textColor}" Keyboard="Numeric"/>
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+
+                --><!--Email--><!--
+                <Frame Padding="1" Margin="20,10,20,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                    <Frame Padding="1" BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                        <StackLayout Spacing="16" Padding="8">
+                            <Entry StyleId="emailAddress" Placeholder="user@test.com" IsEnabled="False"  TextColor="{StaticResource textColor}" Keyboard="Email"/>
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+
+                --><!--Address Line 1--><!--
+                <Frame Padding="1" Margin="20,10,20,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                    <Frame Padding="1" BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                        <StackLayout Spacing="16" Padding="8">
+                            <Entry StyleId="addressLine1" Placeholder="Address Line 1" TextColor="{StaticResource textColor}"/>
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+
+                --><!--Address Line 2--><!--
+                <Frame Padding="1" Margin="20,10,20,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                    <Frame Padding="1" BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                        <StackLayout Spacing="16" Padding="8">
+                            <Entry StyleId="addressLine2" Placeholder="Address Line 2" TextColor="{StaticResource textColor}"/>
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+
+                --><!--Address Line 3--><!--
+                <Frame Padding="1" Margin="20,10,20,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                    <Frame Padding="1" BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                        <StackLayout Spacing="16" Padding="8">
+                            <Entry StyleId="addressLine3" Placeholder="Address Line 3" TextColor="{StaticResource textColor}"/>
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+
+                --><!--Suburb--><!--
+                <Frame Padding="1" Margin="20,10,20,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                    <Frame Padding="1" BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                        <StackLayout Spacing="16" Padding="8">
+                            <Entry StyleId="suburb" Placeholder="Suburb" TextColor="{StaticResource textColor}"/>
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+
+                --><!--State--><!--
+                <Frame Padding="1" Margin="20,10,20,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                    <Frame Padding="1" BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                        <StackLayout Spacing="16" Padding="8">
+                            <Entry StyleId="state" Placeholder="State" TextColor="{StaticResource textColor}"/>
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+
+                --><!--Post Code--><!--
+                <Frame Padding="1" Margin="20,10,20,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                    <Frame Padding="1" BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                        <StackLayout Spacing="16" Padding="8">
+                            <Entry StyleId="postCode" Placeholder="Post Code" TextColor="{StaticResource textColor}"/>
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+
+                --><!--Country Code--><!--
+                <Frame Padding="1" Margin="20,10,20,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                    <Frame Padding="1" BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                        <StackLayout Spacing="16" Padding="8">
+                            <Entry StyleId="countryCode" Placeholder="Country Code" TextColor="{StaticResource textColor}" MaxLength="2"/>
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+
+                --><!--Date of Birth--><!--
+                <Frame Padding="1" Margin="20,10,20,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                    <Frame Padding="1" BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                        <StackLayout Spacing="16" Padding="8">
+                            <DatePicker MinimumDate="01/01/1800" Format="D" TextColor="{StaticResource textColor}"/>
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+
+                --><!--Location of Loved One--><!--
+                <Frame Padding="1" Margin="20,10,20,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                    <Frame Padding="1" BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                        <StackLayout Spacing="16" Padding="8">
+                            <Entry StyleId="countryCode" Placeholder="Location of Loved One" TextColor="{StaticResource textColor}" MaxLength="2"/>
+                        </StackLayout>
+                    </Frame>
+                </Frame>-->
+
+                <!--Reason for Creating page-->
+                <Frame Padding="1" Margin="20,10,20,0" BorderColor="{StaticResource primaryPink}" CornerRadius="10">
+                    <Frame Padding="1" BorderColor="{StaticResource primaryPink}" CornerRadius="10" HorizontalOptions="FillAndExpand">
+                        <StackLayout Spacing="16" Padding="8">
+                            <Picker x:Name="accountReason"
+                                    BackgroundColor="White"
+                                    Title="Reason for Creating Page" 
+                                    ItemsSource="{Binding AccountReasons}"
+                                    TextColor="{StaticResource textColor}" 
+                                    HorizontalOptions="FillAndExpand"/>
+                            <StackLayout Margin="5,0,20,10" Orientation="Horizontal">
+                                <Label Text="Currently Selected:" TextColor="{StaticResource textColor}"/>
+                                <Label Text="Grief" TextColor="{StaticResource textColor}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+
+
+                <!--Submit button-->
+                <Button x:Name="submitButton" Margin="20,30,20,30" Text="Submit Profile" BackgroundColor="{StaticResource primaryPink}" TextColor="White" CornerRadius="10"/>
+
+            </StackLayout>
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>
+    

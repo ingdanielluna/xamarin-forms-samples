@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TextSample.Views.HeartfullEditionProfilePage">
+    
+
+
+        <ContentPage.Resources>
+            <!-- Global Colors -->
+            <Color x:Key="primaryPink">#F9A898</Color>
+            <Color x:Key="secondaryPink">#F6D0C9</Color>
+
+            <!-- Global Sizes -->
+            <x:Double x:Key="mediumTextSize">20</x:Double>
+            <x:Double x:Key="smallTextSize">16</x:Double>
+
+            <!-- Explicit Styles -->
+            <Style x:Key="cardButton" TargetType="Button">
+                <!--<Setter Property="TextColor" Value="Black" />-->
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="BackgroundColor" Value="{StaticResource secondaryPink}" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+            <Style x:Key="labelHeading" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource primaryPink}" />
+                <Setter Property="FontSize" Value="{StaticResource mediumTextSize}" />
+            </Style>
+        </ContentPage.Resources>
+
+        <RefreshView IsRefreshing="{Binding IsRefreshing}"
+                     RefreshColor="Teal"
+                     Command="{Binding RefreshCommand}">
+            <ScrollView>
+                <StackLayout>
+
+                    <!--Profile Image-->
+                    <StackLayout Spacing="20" 
+                         Orientation="Horizontal">
+                        <Frame CornerRadius="20" 
+                           Padding="0"
+                           Margin="20"
+                           IsClippedToBounds="True">
+                            <Image x:Name="profileImage" 
+                               Aspect="AspectFill" 
+                               WidthRequest="130" 
+                               HeightRequest="130"/>
+                        </Frame>
+
+                        <StackLayout x:Name="userHeaderData" Spacing="5" 
+                             Margin="0,10,0,0">
+                            <Label x:Name="usernameLabel"
+                               TextColor="{StaticResource primaryPink}" 
+                               Text="ingdanielluna@gmail.com"
+                               FontSize="12" 
+                               FontAttributes="Bold" 
+                               HeightRequest="40" 
+                               VerticalTextAlignment="Center" />
+                            <Label x:Name="personLabel"
+                               Text="Daniel Luna"
+                               Style="{StaticResource labelHeading}" />
+                            <Button Text="Edit Profile" HorizontalOptions="StartAndExpand" Margin="0, 10,0,0" Style="{StaticResource cardButton}"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <!--Dashboard Posts (Card design)-->
+                    <Label Text="Dashboard"
+                        Margin="20,20,0,0"
+                        TextColor= "{StaticResource primaryPink}"
+                        FontSize="Large"/>
+                    <StackLayout x:Name="dashboardPosts" BindableLayout.ItemsSource="{Binding DashboardPostsViewModelsObservable}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="0" Margin="20,0,20,0" BorderColor="{StaticResource secondaryPink}" CornerRadius="10">
+                                    <StackLayout Spacing="16" BackgroundColor="{StaticResource primaryPink}" Padding="8">
+                                        <Image Source="{ Binding ImagePostUrl }" 
+                                           Margin="-16,-16,-16,0" 
+                                           Aspect="AspectFill" />
+                                        <Label Text="{Binding DashboardPost.Content}" FontSize="{StaticResource smallTextSize}" />
+                                        <Button Text="info" HorizontalOptions="End" Style="{StaticResource cardButton}"/>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+
+                    <!--Medical Updates-->
+                    <Label Text="Medical Updates"
+                        Margin="20,20,0,0"
+                        TextColor= "{StaticResource primaryPink}"
+                        FontSize="Large"/>
+                    <StackLayout x:Name="medicalUpdates" BindableLayout.ItemsSource="{Binding MedicalUpdatesObservable}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="0" Margin="20,0,20,0" BorderColor="{StaticResource secondaryPink}" CornerRadius="10">
+                                    <StackLayout Spacing="16" BackgroundColor="{StaticResource primaryPink}" Padding="8">
+                                        <Label Text="{Binding Content}" FontSize="{StaticResource smallTextSize}" />
+                                        <Button Text="info" HorizontalOptions="End"  Style="{StaticResource cardButton}"/>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+
+                    <!--Tips for Communication (Helpful tips)-->
+                    <Label Text="Tips for Communication"
+                        Margin="20,20,0,0"
+                        TextColor= "{StaticResource primaryPink}"
+                        FontSize="Large"/>
+                    <StackLayout x:Name="helpfulTips" BindableLayout.ItemsSource="{Binding HelpfulTipsObservable}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="0" Margin="20,0,20,0" BorderColor="{StaticResource secondaryPink}" CornerRadius="10">
+                                    <StackLayout Spacing="16" BackgroundColor="{StaticResource primaryPink}" Padding="8">
+                                        <Label Text="{Binding Content}" FontSize="{StaticResource smallTextSize}" />
+                                        <Button Text="info" HorizontalOptions="End"  Style="{StaticResource cardButton}"/>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+
+                    <!--Prayer Requests-->
+                    <Label Text="Prayer Requests"
+                        Margin="20,20,0,0"
+                        TextColor= "{StaticResource primaryPink}"
+                        FontSize="Large"/>
+                    <StackLayout x:Name="prayerRequestPosts" BindableLayout.ItemsSource="{Binding PrayerRequestPostsObservable}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="0" Margin="20,0,20,0" BorderColor="{StaticResource secondaryPink}" CornerRadius="10">
+                                    <StackLayout Spacing="16" BackgroundColor="{StaticResource primaryPink}" Padding="8">
+                                        <Label Text="{Binding Content}" FontSize="{StaticResource smallTextSize}" />
+                                        <Button Text="info" HorizontalOptions="End" Style="{StaticResource cardButton}" />
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+
+                    <!--Practical Errands - Tasks Errands-->
+                    <Label Text="Practical - Errands"
+                        Margin="20,20,0,0"
+                        TextColor= "{StaticResource primaryPink}"
+                        FontSize="Large"/>
+                    <StackLayout x:Name="tasksErrands" BindableLayout.ItemsSource="{Binding TasksErrandsObservable}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="0" Margin="20,0,20,0" BorderColor="{StaticResource secondaryPink}" CornerRadius="10">
+                                    <StackLayout Spacing="16" BackgroundColor="{StaticResource primaryPink}" Padding="8">
+                                        <Label Text="{Binding Description}" FontSize="{StaticResource smallTextSize}" />
+                                        <Button Text="info" HorizontalOptions="End" Style="{StaticResource cardButton}" />
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+
+                    <!--Practical Around the Home - Tasks Around the Home-->
+                    <Label Text="Practical - Around the Home"
+                        Margin="20,20,0,0"
+                        TextColor= "{StaticResource primaryPink}"
+                        FontSize="Large"/>
+                    <StackLayout x:Name="tasksAroundTheHome" BindableLayout.ItemsSource="{Binding TasksAroundTheHomeObservable}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="0" Margin="20,0,20,0" BorderColor="{StaticResource secondaryPink}" CornerRadius="10">
+                                    <StackLayout Spacing="16" BackgroundColor="{StaticResource primaryPink}" Padding="8">
+                                        <Label Text="{Binding Description}" FontSize="{StaticResource smallTextSize}" />
+                                        <Button Text="info" HorizontalOptions="End" Style="{StaticResource cardButton}" />
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+        </RefreshView>
+
+    
+</ContentPage>
